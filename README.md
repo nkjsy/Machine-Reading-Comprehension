@@ -1,6 +1,7 @@
 # Machine-Reading-Comprehension
 2018 AI Challenge: Optional Question Machine Reading Comprehension
 Competition：https://challenger.ai/competition/oqmrc2018
+
 Test A: 23rd, Test B: 28th
 
 Some large files cannot upload, such as data source, model checkpoint, results. See baidu pan: https://pan.baidu.com/s/1mVxfs44jxZ6_NSusJce-Jg
@@ -8,7 +9,7 @@ Some large files cannot upload, such as data source, model checkpoint, results. 
 ## Stage 1：
 1. Preprocessing: jieba word segmentation, query choice merging, manual feature generation. See proprecess(2).ipynb.
 2. Deep learning models: All refer to papers. Mainly use BIDAF. Tuning history recorded in 记录.docx
-* From SQUAD: BIDAF(+attention, +ELMO), HAFN(SLQA), rnet, match-LSTM (all adapted of original version for SQUAD, add shortcut for query to strengthen the query representation)
+* From SQUAD: BIDAF(+attention, +Elmo), HAFN(SLQA), rnet, match-LSTM (all adapted of original version for SQUAD, add shortcut for query to strengthen the query representation)
 * For text similarity (because I merge the query with different alternatives, it can be treated as text pairing problem): RCNN(+attention), BIMPM
 3. Predict the final results for test set: predict.ipynb
 4. Ensemble by averaging best single models: merge.ipynb
@@ -21,3 +22,6 @@ Elmo makes worse. Use the [pretrained Chinese Elmo](https://github.com/HIT-SCIR/
 
 ## Stage 2:
 Reorganize the API into py files. Only need to run start.sh.
+
+## Further improvement:
+Use BERT. See the bert folder for three versions.
