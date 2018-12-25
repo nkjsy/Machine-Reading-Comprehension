@@ -24,7 +24,8 @@ Elmo makes worse. Use the [pretrained Chinese Elmo](https://github.com/HIT-SCIR/
 Reorganize the API into py files. Only need to run start.sh.
 
 ## Further improvement:
-Use BERT. Get the pooled output and go through a dense layer. See the bert folder for three versions. (TPU estimator, GPU estimator, low level API)
+Use BERT. http://jalammar.github.io/illustrated-bert/
+Get the pooled output and go through a dense layer. See the bert folder for three versions. (TPU estimator, GPU estimator, low level API)
 
 Run on GPU. Same postprocessing as stage 1 and 2 (model output 3 probabilities, choose the max alternative finally). Sequence length only 100 characters (too short, ideally 200?), 0.5 epoch got 0.7319, a little weaker than the best BIDAF. Sequence length = 150, 0.5 epoch got 0.7534, better than the best BIDAF!
 
